@@ -1,0 +1,27 @@
+{% extends 'company/com_base.html' %}
+{% block content %}
+    {% load static %}
+    <center><h1>Worker Detail List</h1></center>
+<section class="site-section services-section bg-light block__62849" id="next-section">
+      <div class="container">
+        <div class="row">
+             {% for dri in appont  %}
+          <div class="col-6 col-md-6 col-lg-4 mb-4 mb-lg-5">
+            <a href="view_emplyees" class="block__16443 text-center d-block">
+              <span class="custom-icon mx-auto"><span class="icon-laptop d-block"></span></span>
+              <h3>{{ dri.status }}</h3>
+              <p>{{ dri.job.jobtitle }}</p>
+              <p>{{ dri.job.jobdesc }}</p>
+              <p>Employee Name :{{ dri.user.first_name }}</p>
+            </a>
+
+          </div>
+         {% endfor %}
+        </div>
+
+      </div>
+
+</section>
+
+
+{% endblock %}

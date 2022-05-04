@@ -1,0 +1,117 @@
+{% extends 'company/com_base.html' %}
+{% block content %}
+{% load static %}
+<section class="site-section">
+      <div class="container">
+
+        <div class="row align-items-center mb-5">
+          <div class="col-lg-8 mb-4 mb-lg-0">
+            <div class="d-flex align-items-center">
+              <div>
+                <h2>Post A Work</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-5">
+          <div class="col-lg-12">
+            <form class="p-4 p-md-5 border rounded" method="post" ENCTYPE="multipart/form-data">
+                {% csrf_token %}
+              <h3 class="text-black mb-5 border-bottom pb-2">Work Details</h3>
+
+
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" id="email" name="email" placeholder="you@yourdomain.com" required>
+              </div>
+              <div class="form-group">
+                <label for="job-title">Work Title</label>
+                <input type="text" class="form-control" id="job-title" name="jobtiltle" placeholder="Work " required>
+              </div>
+              <div class="form-group">
+                <label for="job-location">Language</label>
+                <input type="text" class="form-control" id="job-location" name="language" placeholder="Language" required>
+              </div>
+
+                <div class="form-group">
+                  <label for="job-location">Work Description</label>
+                  <input type="text" class="form-control" id="job-location" name="jobdesc" placeholder="Write Job Description!" required>
+                </div>
+              <div class="form-group">
+                <label for="job-type">Work Details Document</label>
+                   <input type="file" class="form-control" id="job-location" name="image" placeholder="Value" required>
+{#                <select class="selectpicker border rounded" id="job-type" name="jobtype" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Job Type" required>#}
+{#                  <option>Application</option>#}
+{#                  <option>Web</option>#}
+{#                </select>#}
+              </div>
+              <div class="form-group">
+                <label for="job-location">Value Offered</label>
+                <input type="text" class="form-control" id="job-location" name="money" placeholder="Value" required>
+              </div>
+              <div class="form-group">
+                <label for="job-location">Date</label>
+                <input type="date" class="form-control" id="job-location" name="Date" placeholder="Date" required>
+              </div>
+              <div class="form-group">
+                <label for="job-location">Deadline Time</label>
+                <input type="time" class="form-control" id="job-location" name="time" placeholder="Time" required>
+              </div>
+
+
+              <h3 class="text-black my-5 border-bottom pb-2">Company Details</h3>
+              <div class="form-group">
+                <label for="company-name">Company Name</label>
+                <input type="text" class="form-control" id="company-name" name="companyname" placeholder="Company Name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="company-tagline">Address</label>
+                <input type="text" class="form-control" id="company-tagline" name="address" placeholder="Address" required>
+              </div>
+
+               <div class="form-group">
+                <label for="company-tagline">Contact</label>
+                <input type="number" class="form-control" id="company-tagline" name="contact" placeholder="Contact" required>
+              </div>
+              <div class="form-group">
+                <label for="company-website">Website (Optional)</label>
+                <input type="text" class="form-control" id="company-website" placeholder="https://" required>
+              </div>
+
+              <div class="form-group">
+                <label for="company-website-fb">Facebook Username (Optional)</label>
+                <input type="text" class="form-control" id="company-website-fb" placeholder="companyname" required>
+              </div>
+             <div class="row align-items-center mb-5">
+
+          <div class="col-lg-4 ml-auto">
+            <div class="row">
+              <div class="col-6">
+                <input type="submit"  class="btn btn-block btn-primary btn-md"></input>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+          </form>
+          </div>
+
+
+        </div>
+{#        <div class="row align-items-center mb-5">#}
+{##}
+{#          <div class="col-lg-4 ml-auto">#}
+{#            <div class="row">#}
+{#              <div class="col-6">#}
+{#                <a type="submit"  class="btn btn-block btn-primary btn-md">Save Job</a>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+{#        </div>#}
+      </div>
+    </section>
+{% endblock %}

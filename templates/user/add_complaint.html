@@ -1,0 +1,46 @@
+{% extends 'user/user_base.html' %}
+{% block content %}
+{% load static %}
+  <form method="post">
+      {% csrf_token %}
+	<section class="banner-area relative" id="home" style="background-image: url({% static 'img/student.jpg' %})">
+		<div class="overlay overlay-bg"></div>
+		<div class="container">
+			<div class="row d-flex text-center align-items-center justify-content-center">
+				<div class="about-content col-lg-12">
+{#					<p class="text-white link-nav"><a href=""> </a> <span class="lnr lnr-arrow-right"></span> <a href="">#}
+{#							Complaint</a></p>#}
+					<h1 class="text-white">
+						Complaint
+
+
+					</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End banner Area -->
+
+	<!-- Start About Area -->
+		<section class="about-area section-gap bg-white">
+		<div class="container">
+			<div class="row d-flex justify-content-end align-items-center">
+				<div class="col-lg-6">
+                    <h2>Submit Your  Complaints</h2>
+
+{#                    <label for="complaint">Complaint</label>#}
+                    <textarea class="form-control" id="complaint" name="complaint" placeholder="complaint"></textarea><br>
+                    <input type="submit" class=" btn btn-info">
+
+
+				</div>
+				<div class="col-lg-6 about-right no-padding">
+					<img class="img-fluid" src="" alt="">
+				</div>
+			</div>
+		</div>
+	</section>
+   </form>
+	<!-- End About Area -->
+
+{% endblock %}

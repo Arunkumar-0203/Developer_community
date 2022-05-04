@@ -1,0 +1,49 @@
+{% extends 'user/user_base.html' %}
+{% block content %}
+    {% load static %}
+
+<section class="site-section" id="next">
+      <div class="container">
+
+        <div class="row mb-5 justify-content-center">
+          <div class="col-md-7 text-center">
+            <h2 class="section-title mb-2">Work Listed</h2>
+          </div>
+        </div>
+        {% for dri in post  %}
+        <ul class="job-listings mb-5">
+          <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
+            <a href="job_details?id={{ dri.id }}"></a>
+{#            <div class="job-listing-logo">#}
+{#              <img src="images/job_logo_1.jpg" alt="Image" class="img-fluid">#}
+{#            </div>#}
+
+            <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
+              <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
+                <h2>{{ dri.companyname}}</h2>
+                <strong>{{ dri.jobtitle}}</strong>
+              </div>
+              <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">{{ dri.contact}}
+{#                <span class="icon-room"></span>#}
+              </div>
+               <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">{{ dri.language}}
+{#                <span class="icon-room"></span>#}
+              </div>
+              <div class="job-listing-meta">
+                <span class="badge badge-danger">Details</span>
+              </div>
+            </div>
+
+          </li>
+          <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
+            <a href=""></a>
+{#            <div class="job-listing-logo">#}
+{#              <img src="images/job_logo_2.jpg" alt="Image" class="img-fluid">#}
+{#            </div>#}
+          </li>
+         </ul>
+       {% endfor %}
+       </div>
+ </section>
+
+{% endblock %}

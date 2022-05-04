@@ -1,0 +1,62 @@
+{% extends 'company/com_base.html' %}
+{% block content %}
+    {% load static %}
+
+<section class="site-section" id="next">
+      <div style="padding-left: 5%">
+
+        <div class="row mb-5 justify-content-center">
+          <div class="col-md-7 text-center">
+            <h2 class="section-title mb-2">Vacancy Appoinment Listed</h2>
+          </div>
+        </div>
+
+
+
+
+
+             <table class="table table-bordered table-striped table-hover" style="background-color: #002633;width: 1000px;">
+                                 <th class="success" style="color: white;">Applicant Name</th>
+                                 <th class="success" style="color: white;">Email</th>
+                                 <th class="success" style="color: white;">Vacancy</th>
+
+                                 <th class="success" style="color: white;">Cv</th>
+                                  <th class="success" style="color: white;">jobtype</th>
+                                  <th class="success" style="color: white;">deadline</th>
+                                  <th class="success" style="color: white;">date</th>
+                                  <th class="success" style="color: white;">time</th>
+                                    <th class="success" style="color: white;">add link</th>
+          <th class="success" style="color: white;">Confirm</th>
+               {% for dri in appont  %}
+                                <tr style="background-color:white;width: 700px;">
+                                    <td>{{ dri.user.user.first_name}}</td>
+                                    <td>{{ dri.user.user.email}}</td>
+                                    <td>{{ dri.vacancy.jobtype}}</td>
+
+                                    <td><a style="color: blue" href="{{ dri.user.cv_doc.url }}" download>Download </a></td>
+
+                                    <td>{{ dri.vacancy.jobtype}}</td>
+                                    <td>{{ dri.vacancy.deadline}}</td>
+                                    <td>{{ dri.date}}</td>
+                                    <td>{{ dri.time}}</td>
+                                    <td><a style="color: #003eff" href="{{ dri.link }}">{{ dri.link }}</a></td>
+
+                                    <td><button style="background-color:lightslategray"><a href="give_link?id={{dri.id}}" class=" btn btn-success" style="color:black">Meet</a></button></td>
+                                    <td><button style="background-color:lightslategray"><a href="confirm_vacancy?id={{ dri.id }}" class=" btn btn-danger" style="color:black">Confirm</a></button></td>
+
+                                </tr>
+              {% endfor %}
+
+
+
+                            </table>
+
+
+
+
+
+
+       </div>
+ </section>
+
+{% endblock %}

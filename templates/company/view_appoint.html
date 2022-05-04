@@ -1,0 +1,96 @@
+{% extends 'company/com_base.html' %}
+{% block content %}
+    {% load static %}
+
+<section class="site-section" id="next">
+      <div class="container">
+
+        <div class="row mb-5 justify-content-center">
+          <div class="col-md-7 text-center">
+            <h2 class="section-title mb-2">Appoinment Listed</h2>
+          </div>
+        </div>
+
+
+             <table class="table table-bordered table-striped table-hover" style="background-color: #002633;width: 1000px;">
+                                 <th class="success" style="color: white;">Applicant Name</th>
+                                 <th class="success" style="color: white;">Email</th>
+                                 <th class="success" style="color: white;">jobtitle</th>
+
+                                 <th class="success" style="color: white;">Cv</th>
+                                  <th class="success" style="color: white;">jobdesc</th>
+{#                                   <th class="success" style="color: white;">jobtype</th>#}
+{#                                  <th class="success" style="color: white;">Status</th>#}
+{#                                    <th class="success" style="color: white;">Accept</th>#}
+          <th class="success" style="color: white;">Confirm</th>
+                        {% for dri in companayappont  %}
+{#               {% for dri in appont  %}#}
+                                <tr style="background-color:white;width: 700px;">
+                                    <td>{{ dri.user.user.first_name}}</td>
+                                    <td>{{ dri.user.user.email}}</td>
+                                    <td>{{ dri.job.jobtitle}}</td>
+
+                                    <td><a style="color: blue" href="{{ dri.user.cv_doc.url }}" download>Download </a></td>
+
+                                    <td>{{ dri.job.jobdesc}}</td>
+{#                                    <td>{{ dri.job.jobtype}}</td>#}
+
+{#                                    <td><button style="background-color:lightslategray"><a href="accepted_candidates?id={{ i.user_id}}" class=" btn btn-success" style="color:black">Approve</a></button></td>#}
+                                    <td><button style="background-color:lightslategray"><a href="confirm?id={{ dri.id}}" class=" btn btn-danger" style="color:black">Confirm</a></button></td>
+
+                                </tr>
+              {% endfor %}
+
+
+
+                            </table>
+
+
+
+{#        <ul class="job-listings mb-5">#}
+{#          <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">#}
+{#            <a href="confirm?id={{ dri.id}}"></a>#}
+{#            <div class="job-listing-logo">#}
+{#              <img src="images/job_logo_1.jpg" alt="Image" class="img-fluid">#}
+{#            </div>#}
+{##}
+{#            <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">#}
+{#              <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">#}
+{#                <h2>{{ dri.user.first_name}}</h2>#}
+{#                <h2>{{ dri.user.email}}</h2>#}
+{##}
+{#                <strong>{{ dri.job.jobtitle}}$</strong>#}
+{#                  <h5>Cv</h5>#}
+{#                   <a style="color: blue" href="{{ i.cv_doc.url }}" download>Download </a>#}
+{#              </div>#}
+{#              <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">{{ dri.job.jobdesc}}#}
+{#              <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">{{ dri.job.jobtype}}#}
+{#                   <div class="job-listing-meta">#}
+{#                <span class="badge badge-danger">Confirm</span>#}
+{#              </div>#}
+{#                <span class="icon-room"></span>#}
+{#              </div>#}
+{##}
+{#               <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">#}
+{#                <span class="icon-room"></span>#}
+{#              </div>#}
+{#              <div class="job-listing-meta">#}
+{#                <span class="badge badge-danger">Details</span>#}
+{#              </div>#}
+{#            </div>#}
+{#             </div>#}
+{#            </div>#}
+{#          </li>#}
+{#        </ul>#}
+{#          <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">#}
+{#            <a href="job_details"></a>#}
+{#            <div class="job-listing-logo">#}
+{#              <img src="images/job_logo_2.jpg" alt="Image" class="img-fluid">#}
+{#            </div>#}
+{#          </li>#}
+{#         </ul>#}
+{#       {% endfor %}#}
+       </div>
+ </section>
+
+{% endblock %}

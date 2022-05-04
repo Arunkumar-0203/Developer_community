@@ -1,0 +1,79 @@
+{% extends 'user/user_base.html' %}
+{% block content %}
+{% load static %}
+  <form method="post">
+      {% csrf_token %}
+	<section class="banner-area relative" id="home" style="background-image: url({% static 'img/student.jpg' %})">
+		<div class="overlay overlay-bg"></div>
+		<div class="container">
+			<div class="row d-flex text-center align-items-center justify-content-center">
+				<div class="about-content col-lg-12">
+{#					<p class="text-white link-nav"><a href=""> </a> <span class="lnr lnr-arrow-right"></span> <a href="">#}
+{#							Complaint</a></p>#}
+					<h1 class="text-white">
+						Complaint
+
+
+					</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End banner Area -->
+
+	<!-- Start About Area -->
+		<section class="about-area section-gap bg-white">
+		<div class="container">
+			<div class="row d-flex justify-content-end align-items-center">
+				<div class="col-lg-6">
+
+
+
+				</div>
+				<div class="col-lg-6 about-right no-padding">
+					<img class="img-fluid" src="" alt="">
+				</div>
+
+             <table class="table table-bordered table-striped table-hover" style="background-color: #002633;width: 1000px;">
+                                 <th class="success" style="color: white;">Company</th>
+                                 <th class="success" style="color: white;">Email</th>
+                                 <th class="success" style="color: white;">Vacancy</th>
+
+                                 <th class="success" style="color: white;">Cv</th>
+                                  <th class="success" style="color: white;">jobtype</th>
+                                  <th class="success" style="color: white;">deadline</th>
+                                  <th class="success" style="color: white;">date</th>
+                                  <th class="success" style="color: white;">time</th>
+{#                                    <th class="success" style="color: white;">add link</th>#}
+{#          <th class="success" style="color: white;">Confirm</th>#}
+               {% for dri in intervi  %}
+                                <tr style="background-color:white;width: 700px;">
+                                    <td>{{ dri.vacancy.user.first_name}}</td>
+                                    <td>{{ dri.vacancy.user.email}}</td>
+                                    <td>{{ dri.vacancy.jobtype}}</td>
+
+                                    <td><a style="color: blue" href="{{ dri.user.cv_doc.url }}" download>Download </a></td>
+
+                                    <td>{{ dri.vacancy.jobtype}}</td>
+                                    <td>{{ dri.vacancy.deadline}}</td>
+                                    <td>{{ dri.date}}</td>
+                                    <td>{{ dri.time}}</td>
+                                    <td><a style="color: #003eff" href="{{ dri.link }}">{{ dri.link }}</a></td>
+
+{#                                    <td><button style="background-color:lightslategray"><a href="give_link?id={{dri.id}}" class=" btn btn-success" style="color:black">Meet</a></button></td>#}
+{#                                    <td><button style="background-color:lightslategray"><a href="confirm_vacancy?id={{ dri.id }}" class=" btn btn-danger" style="color:black">Confirm</a></button></td>#}
+
+                                </tr>
+              {% endfor %}
+
+
+
+                            </table>
+
+			</div>
+		</div>
+	</section>
+   </form>
+	<!-- End About Area -->
+
+{% endblock %}

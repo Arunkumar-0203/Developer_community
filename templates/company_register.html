@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load static %}
+    <form method="post">
+        {% csrf_token %}
+    <center><h1 class="mb-20">COMPANY REGISTRATION</h1></center>
+<section class="site-section" id="next-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <form action="#" class="">
+              <div class="row form-group">
+                <div class="col-md-6 mb-3 mb-md-0">
+                  <label class="text-black" for="fname">Name</label>
+                  <input type="text" id="fname" class="form-control" name="name" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="text-black" for="lname">Address</label>
+                  <input type="text" id="lname" class="form-control" name="address" required>
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-6 mb-3 mb-md-0">
+                  <label class="text-black" for="fname">Contact</label>
+                  <input type="number" id="fname" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" title="give valid number" class="form-control" name="contact" required >
+                </div>
+                <div class="col-md-6">
+                  <label class="text-black" for="lname">Pin</label>
+                  <input type="number" id="lname" pattern="[0-9]{4}" title="give valid 4 digit pin" class="form-control" name="pin" required>
+                </div>
+              </div>
+
+              <div class="row form-group">
+
+                <div class="col-md-12">
+                  <label class="text-black" for="email">Email</label>
+                  <input type="email" id="email" class="form-control" name="email" required>
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-6 mb-3 mb-md-0">
+                  <label class="text-black" for="fname">Username</label>
+                  <input type="text" id="fname" class="form-control" name="username" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="text-black" for="lname">Password</label>
+                  <input type="password" id="lname" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" class="form-control" name="password" required>
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <input type="submit" value="Register" class="btn btn-primary btn-md text-white">
+                </div>
+              </div>
+
+
+            </form>
+          </div>
+          <div class="col-lg-5 ml-auto">
+            <div class="p-4 mb-3 bg-white">
+              <p class="mb-0 font-weight-bold">Address</p>
+              <p class="mb-4">203 Fake St. Mountain View, San Francisco, California, USA</p>
+
+              <p class="mb-0 font-weight-bold">Phone</p>
+              <p class="mb-4"><a href="#">+1 232 3235 324</a></p>
+
+              <p class="mb-0 font-weight-bold">Email Address</p>
+              <p class="mb-0"><a href="#">youremail@domain.com</a></p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </form>
+{% endblock %}

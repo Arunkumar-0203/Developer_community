@@ -1,0 +1,71 @@
+{% extends 'user/user_base.html' %}
+{% block content %}
+{% load static %}
+<section class="site-section">
+      <div class="container">
+
+        <div class="row align-items-center mb-5">
+          <div class="col-lg-8 mb-4 mb-lg-0">
+            <div class="d-flex align-items-center">
+              <div>
+                <h2>Post A Work Status</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-5">
+          <div class="col-lg-12">
+            <form class="p-4 p-md-5 border rounded" method="post" ENCTYPE="multipart/form-data">
+                {% csrf_token %}
+              <h3 class="text-black mb-5 border-bottom pb-2">Work</h3>
+                <div class="form-group">
+                <div class="form-group">
+                  <select class="form-control" name="jobs"  required>
+                    <option selected="selected" value="" >Select Work</option>
+                    {% for em in pjob %}
+                    <option value="{{ em.job.id }}" >{{ em.job.jobtitle}}</option>
+                     {% endfor %}
+                  </select>
+              </div>
+              </div>
+
+
+
+{#              <div class="form-group">#}
+{#                <label for="email"></label>#}
+{#                <input type="text" class="form-control" id="email" name="email" placeholder="you@yourdomain.com" required>#}
+{#              </div>#}
+{#              <div class="form-group">#}
+{#                <label for="job-title">Work Title</label>#}
+{#                <input type="text" class="form-control" id="job-title" name="jobtiltle" placeholder="Product Designer" required>#}
+{#              </div>#}
+{#              <div class="form-group">#}
+{#                <label for="job-location">Language</label>#}
+{#                <input type="text" class="form-control" id="job-location" name="language" placeholder="Language" required>#}
+{#              </div>#}
+
+                <div class="form-group">
+                  <label for="job-location">Work Description</label>
+                  <input type="text" class="form-control" id="job-location" name="workdesc" placeholder="Write Job Description!" required>
+                </div>
+              <div class="form-group">
+                <label for="job-location">Add Working Application</label>
+                <input type="file" class="form-control" id="job-location" name="image" placeholder="" required>
+              </div>
+              <div class="form-group">
+                <label for="job-location">Add Work Report</label>
+                <input type="file" class="form-control" id="job-location" name="images" placeholder="" required>
+              </div>
+                <div class="col-lg-4 ml-auto">
+                 <div class="row">
+                  <div class="col-6">
+                   <input  href="" type="submit"  class="btn btn-block btn-primary btn-md"></input>
+                  </div>
+                 </div>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+</section>
+{% endblock %}

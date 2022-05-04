@@ -1,0 +1,33 @@
+{% extends 'admin/admin_base.html' %}
+{% block content %}
+{% load static %}
+{#    <h1>Admin Dashboard</h1>#}
+<div id="page-inner" >
+<h1>Company List</h1>
+<table class="table table-bordered table-striped table-hover">
+
+<th class="success">Company Name</th>
+<th class="success">Email</th>
+<th class="success">Contact Number</th>
+<th class="success">Address</th>
+<th class="success">Pin</th>
+<th class="success">Date Of Join</th>
+<th class="success">Remove</th>
+{% for com in company %}
+
+<tr>
+    <td>{{ com.user.first_name}}</td>
+    <td>{{ com.user.email}}</td>
+    <td>{{ com.contact}}</td>
+    <td>{{ com.address}}</td>
+    <td>{{ com.pin}}</td>
+    <td>{{ com.user.date_joined}}</td>
+    <td><a href="reject?id={{ com.user_id}}" class=" btn btn-danger">Remove</a></td>
+
+</tr>
+
+    {% endfor %}
+</table>
+        </div>
+
+{% endblock %}

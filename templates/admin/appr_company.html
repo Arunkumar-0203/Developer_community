@@ -1,0 +1,36 @@
+{% extends 'admin/admin_base.html' %}
+{% block content %}
+{% load static %}
+{#    <h1>Admin Dashboard</h1>#}
+<div id="page-inner">
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+<h1>New Company Registration</h1>
+<table class="table table-bordered table-striped table-hover">
+
+<th class="info">Company Name</th>
+<th class="info">Email</th>
+<th class="info">Contact Number</th>
+<th class="info">Address</th>
+<th class="info">Approve</th>
+<th class="info">Reject</th>
+{% for co in company  %}
+
+<tr>
+    <td>{{ co.user.first_name}}</td>
+    <td>{{ co.user.email}}</td>
+    <td>{{ co.contact}}</td>
+    <td>{{ co.address}}</td>
+    <td><a href="approve?id={{ co.user_id}}" class=" btn btn-success">Approve</a></td>
+    <td><a href="reject?id={{ co.user_id}}" class=" btn btn-danger">Reject</a></td>
+
+</tr>
+
+    {% endfor %}
+</table>
+        </div>
+
+{% endblock %}
