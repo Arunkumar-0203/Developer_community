@@ -26,8 +26,8 @@
                         {% for dri in companayappont  %}
 {#               {% for dri in appont  %}#}
                                 <tr style="background-color:white;width: 700px;">
-                                    <td>{{ dri.user.user.first_name}}</td>
-                                    <td>{{ dri.user.user.email}}</td>
+                                    <td>{{ dri.user.first_name}}</td>
+                                    <td>{{ dri.user.email}}</td>
                                     <td>{{ dri.job.jobtitle}}</td>
 
                                     <td><a style="color: blue" href="{{ dri.user.cv_doc.url }}" download>Download </a></td>

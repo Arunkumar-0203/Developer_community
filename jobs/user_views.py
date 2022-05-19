@@ -112,6 +112,7 @@ class ApplyVacancys(TemplateView):
         vecan = AddVacancy.objects.get(pk=id)
         appl = ApplyVacancy()
         appl.vacancy = vecan
+        appl.company_id = vecan.user.id
         appl.user_id = usereg.id
         appl.status = 'apply'
         appl.save()

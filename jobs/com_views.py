@@ -6,7 +6,7 @@ from django.views.generic import TemplateView, View
 
 from Developer_community import settings
 from jobs.download import download
-from jobs.models import Complaint, PostJob, AddVacancy, ViewAppont, ApplyVacancy, AddWorkStatus
+from jobs.models import Complaint, PostJob, AddVacancy, ViewAppont, ApplyVacancy, AddWorkStatus, usereegistration
 
 
 class IndexView(TemplateView):
@@ -173,7 +173,9 @@ class ViewEmployees(TemplateView):
         context = super(ViewEmployees,self).get_context_data(**kwargs)
         # id = self.request.GET['id']
         user = User.objects.get(pk=self.request.user.id)
-        appont = ViewAppont.objects.filter(status='Confirm',job__user=user)
+        u=AddVacancy.objects.filter(user_id=user.id)
+        appont = ApplyVacancy.objects.filter(status='Confirm',company_id=user.id)
+        print("55555555555",appont)
         context['appont'] =  appont
         return context
 

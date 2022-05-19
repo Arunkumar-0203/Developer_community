@@ -28,7 +28,7 @@ class Complaint(models.Model):
 
 class PostJob(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
-    users = models.ForeignKey(usereegistration,on_delete=models.CASCADE)
+    users = models.ForeignKey(usereegistration,on_delete=models.CASCADE,null=True)
     email = models.CharField(max_length=100)
     jobtitle = models.CharField(max_length=100)
     language =  models.CharField(max_length=100,null=True)
@@ -68,6 +68,7 @@ class AddWorkStatus(models.Model):
 class ApplyVacancy(models.Model):
     user = models.ForeignKey(usereegistration,on_delete=models.CASCADE)
     vacancy = models.ForeignKey(AddVacancy,on_delete=models.CASCADE,null=True)
+    company = models.ForeignKey(User,on_delete=models.CASCADE,null=True)
     status = models.CharField(max_length=100)
     link = models.URLField(max_length=400,null=True,default='test')
     time = models.TimeField(max_length=400,null=True)
